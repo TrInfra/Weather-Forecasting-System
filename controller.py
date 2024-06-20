@@ -1,5 +1,4 @@
 import requests
-import datetime
 import json
 
 chave= '1bebbc645d7db8fbf9319e8735fe94d1'
