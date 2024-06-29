@@ -69,7 +69,7 @@ def search():
     # Load and resize the weather icon
     try:
         icon_image = Image.open(icon_path).convert("RGBA")
-        icon_image = icon_image.resize((110, 100), Image.LANCZOS)  # Resize using LANCZOS
+        icon_image = icon_image.resize((114, 100), Image.LANCZOS)  # Resize using LANCZOS
         icon = ImageTk.PhotoImage(icon_image)
         icon_label.configure(image=icon)
         icon_label.image = icon
