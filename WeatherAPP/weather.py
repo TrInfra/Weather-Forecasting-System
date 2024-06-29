@@ -1,6 +1,7 @@
 import tkinter as tk
 import requests
 import ttkbootstrap
+import pyttsx3
 from tkinter import messagebox
 from PIL import Image, ImageTk
 import os
@@ -79,6 +80,13 @@ def search():
     # Update temperature and description labels with current data
     temperature_label.configure(text=f"Temperature: {temperature:.0f} °C")
     description_label.configure(text=f"Description: {description.replace('_', ' ').capitalize()}")
+
+# Synthesizing voice for temperature and city
+    root.after(100, speak_temperature, city, temperature)
+def speak_temperature(city, temperature):
+    engine = pyttsx3.init()
+    engine.say(f"A temperatura em {city} é de {temperature:.0f} graus Celsius")
+    engine.runAndWait()
 
 # Configure the main window
 root = ttkbootstrap.Window(themename="superhero")
